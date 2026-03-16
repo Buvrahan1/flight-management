@@ -1,0 +1,15 @@
+### Tüm uçuşları getir (GET)
+GET http://localhost:8080/api/flights
+
+###
+
+### Yeni bir uçuş ekle (POST)
+POST http://localhost:8080/api/flights
+Content-Type: application/json
+
+{
+  "flightNumber": "TK31311",
+  "origin": "IST",
+  "destination": "OGU",
+  "status": "ON_TIME"
+}
