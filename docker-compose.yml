@@ -10,6 +10,7 @@ services:
       - "5432:5432"
   app:
     build: . # Dockerfile burada demek
+    image: buvrahan1/flight-management-service:latest
     container_name: skysync_app
     ports:
       - "8080:8080"
@@ -21,9 +22,13 @@ services:
   watchtower:
     image: containrrr/watchtower
     container_name: skysync_watchtower
+    environment:
+      - DOCKER_API_VERSION=1.44 # Docker'a "Bu dilden konuş" diyoruz
+      - REPO_USER=${MY_DOCKER_USER}
+      - REPO_PASS=${MY_DOCKER_PASS} # Veya Access Token
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Docker'ın kalbine erişim izni
-    command: --interval 30 --cleanup # 30 saniyede bir kontrol et ve eski imajları sil
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 30 --cleanup
     restart: always
 
   prometheus:
