@@ -18,6 +18,14 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/skysyncdb
 
+  watchtower:
+    image: containrrr/watchtower
+    container_name: skysync_watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Docker'ın kalbine erişim izni
+    command: --interval 30 --cleanup # 30 saniyede bir kontrol et ve eski imajları sil
+    restart: always
+
   prometheus:
     image: prom/prometheus
     container_name: skysync_prometheus

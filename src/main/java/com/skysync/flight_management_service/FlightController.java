@@ -17,7 +17,7 @@ public class FlightController {
     public Map<String, String> getStatus() {
         return Map.of(
                 "status", "UP",
-                "message", "Sky-Sync Aktif: Hava Trafik Kontrol Sistemine Hoş Geldiniz!",
+                "message", "Sky-Sync Aktif: Hava Trafik Kontrol Sistemine Hoş Geldiniz! Kaptan Buğrahan konuşuyor...",
                 "java_version", System.getProperty("java.version"),
                 "developer", "Bugrahan AYDIN"
         );
