@@ -9,7 +9,7 @@ public class FlightServiceTest {
     void testFlightDurationLogic() {
         // Hazırlık (Given)
         int departureTime = 1000; // 10:00
-        int arrivalTime = 900;   // 12:00
+        int arrivalTime = 1200;   // 12:00
 
         // İşlem (When)
         boolean isLogicValid = arrivalTime > departureTime;
