@@ -18,4 +18,15 @@ public class FlightService {
     public Flight createFlight(Flight flight) {
         return flightRepository.save(flight);
     }
+
+    // Bu metod insanların hata yapmasını engelleyen "Kule" görevini görür
+    public boolean isValidFlight(int departure, int arrival, double price) {
+        if (departure >= arrival) {
+            return false; // Zaman makinesi henüz icat edilmedi!
+        }
+        if (price <= 0) {
+            return false; // Bedava uçuş olmaz (şirket batar!)
+        }
+        return true; // Her şey yolunda, uçuş temiz.
+    }
 }
