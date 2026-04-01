@@ -1,14 +1,13 @@
 package com.skysync.flight_management_service;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-@Disabled
-@SpringBootTest
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
+
+// @SpringBootTest
 class FlightManagementServiceApplicationTests {
-	@Disabled
-	@Test
-	void contextLoads() {
-	}
+
+	// @Test
+	// void contextLoads() {
+	// }
 
 }
