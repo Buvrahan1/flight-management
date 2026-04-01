@@ -23,7 +23,7 @@ jobs:
 
       # 3. Maven ile uygulamayı paketle (JAR oluştur)
       - name: Build with Maven
-        run: mvn clean package -DskipTests # Hatırlarsın, testleri atlamamız gerekiyordu
+        run: mvn clean package # -DskipTests kısmını sildik!
 
       # 4. Docker Hub'a giriş yap (Az önce oluşturduğumuz kasadan alacak)
       - name: Login to Docker Hub
